@@ -1,5 +1,14 @@
 <!-- main_intro -->
 <div class="main_intro">
+	<!-- [COMMENT] 보통 이런곳에 공지! 라고 되어있는건 클릭하고 페이지가 이동되는 앵커겠죵 'ㅁ' 
+		
+		나라면 이렇게 했을거 같앙. 
+
+		<a href="">
+			<span>[공지사항]</span>
+			로또팡! 리뉴얼 기념 이벤트(2017.09.20 ~ 10.20)
+		</a>	
+	-->
 	<strong>[공지사항]</strong>
 	<span>로또팡! 리뉴얼 기념 이벤트(2017.09.20 ~ 10.20)</span>
 </div>
@@ -12,6 +21,8 @@
 			<span>782회</span>로또 당첨 번호
 		</p>
 		<p class="win_num">
+			<!-- [COMMENT]그냥 로또 목록을 보여주는 단순 TEXT 그룹이지 어떤 '문장'은 아니잖아?
+			p보다는 그냥 div나 span 으로 감싸도 될거같아 :)  -->
 			<span class="ball_n1th">6</span>	
 			<span class="ball_n10th">18</span>
 			<span class="ball_n10th">19</span>
@@ -24,6 +35,16 @@
 	</div>
 	<p class="path">
 		<span class="home"></span>
+		<!-- [COMMENT] 
+			우리가 HTML Tag를 쓸때 <, > 등을 쓰지? HTML 태그를 꺽쇠 여닫음으로 시작하겠다는 예약어가 있기 때문에,
+			꺽쇠 여닫음, 앰퍼센드 등의 오류를 야기할 수 있는 단순 텍스트들은, HTML Entity 라는 특수문자 표기표-
+			를 참고해서 작성해야해. (&nbsp; 도 HTML Entity 잖아? 띄어쓰기 한칸이상은 무시하는 특성때문에 만들어진.)
+
+			1. 그래서 우꺽쇠는 &gt; 좌꺽쇠는 &lt; 로 표기해야 오류가 안나고.
+			2. 여기서 > 는 디자인이 들어가있는거같아. 컬러도 좀 밝은 회색이고 양 옆 마진도 있잖아? 그래서 
+			<span class="step">&gt;</span> 
+			이런식으로 감싸서 CSS 스타일링을 해야할거같아.
+		-->
 		>
 		<span class="depth">회원가입</span>
 		>
