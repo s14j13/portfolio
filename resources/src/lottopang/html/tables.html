@@ -1,5 +1,14 @@
 <!-- 회원가입 및 계정찾기 -->
 span안에img를넣어야하나?걍img만써도되는가?
+<!-- [COMMENT] span 도 아니고, img 도 아니에요. 
+저 쩜탱이 따위가 컨텐츠는 아니기때문에, (디자인으로 파악한 마크업 오류임)
+:before 로 bg 처리 할거야. 그리고 둥근 불릿이라고 해서 이미지가 따로 필요하지 않아요.
+
+IE8에서 border-radius 를 지원하지 않지만,
+IE9부터는 지원하기 떄문에 border-raidus:50px;background-color:gray; width:npx;height:npx;
+하면 저 둥근 불릿이 만들어지는데,
+IE8에서는 각진 네모로 나올뿐이라 이건 IE8에서의 완벽한 구현은 포기하고
+CSS만으로 구현 가능함. -->
 
 <table class="signup1">
 	<caption>필수사항입력1</caption>
@@ -11,12 +20,22 @@ span안에img를넣어야하나?걍img만써도되는가?
 	</colgroup>
 	<tbody>
 		<tr>
+			<!-- [COMMENT]  
+				1. 위에서 언급했듯이 쩜 따위는 마크업에 포함되면 안됩니다 (컨텐츠로써의 의미가 없는 단순 디자인bg.)
+				2. 계정ID/이메일, 닉네임(필수) 등은 td가 아니라 th입니다
+				3. <span class="text_blue">melissah@naver.com</span> <-- text_blue/red 가 아니라 
+				color_noti, color_strong 등으로 해야 나중에 사이트가 전체적으로 강조컬러가 변경되었을때도 문제가 안생기지?
+				이건 한번 언급했던 부분같아 컬러가 블루라고 해서 컬러값 자체를 클래스에 넣지말자는!
+			-->
 			<td><span><img src="" alt="쩜"></span>계정ID / 이메일</td>
 			<td><strong>N60221122</strong>님<span class="text_blue">melissah@naver.com</span></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
+			<!--[COMMENT] <span class="text_red">(필수)</span> <- 필수 라는건 강조아닐까?'ㅁ'... 
+				나라면 strong 으로 감쌌을거 같아용. 그리고 혹시나 필수에 대한 디자인이 달라질 경우를 대비하여
+				text_red 이런 다른데서도 쓰이는 클래스가 아닌, field_mand, field_req 등으로 네이밍 했을거같아 -->
 			<td><span><img src="" alt="쩜"></span>닉네임<span class="text_red">(필수)</span></td>
 			<td><input type="text"></td>
 			<td><button></button></td>
@@ -24,7 +43,9 @@ span안에img를넣어야하나?걍img만써도되는가?
 		</tr>
 		<tr>
 			<td></td>
-			<td><span class="text_red">이미 사용중입니다. 다른 닉네임을 입력해주세요.</span></td>
+			<td>
+				<!-- [COMMENT] span 은 문장 보다는 단어나 짧은 절 정도에 적합하고, 이런건 p가 더 맞아용 -->
+				<span class="text_red">이미 사용중입니다. 다른 닉네임을 입력해주세요.</span></td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -46,20 +67,58 @@ span안에img를넣어야하나?걍img만써도되는가?
 			<td></td>
 			<td></td>
 		</tr>
+
+		<!-- [COMMENT] 
+			음.. td는 항목- 인데, th는 항목의 제목이고.
+			아래처럼 th 하나에 하나의 td로 묶어주면 충분한데 지금 td를 겁나 쪼개놨어
+			개발자 방식이야ㅠㅠ 다 고쳐야해요
+
+			<th scope="row">
+				<label for="fieldFormTel">본인명의 휴대전화
+					<strong class="field_mand">(필수)</strong>
+				</label>
+			</th>
+			<td>
+				<input type="tel" id="fieldFormTel">
+				<button type="button" class="btn_primary">인증하기</button>
+				<input type="checkbox" id="chkSmsAgree">
+				<label for="chkSmsAgree">SMS수신</label>
+			</td>
+		-->
 		<tr>
 			<td><span><img src="" alt="쩜"></span>본인명의 휴대전화<span class="text_red">(필수)</span></td>
 			<td><input type="text"></td>
 			<td><button></button></td>
-			<td><input type="checkbox">SMS수신</td>
+			<td>
+				<!-- [COMMENT] 
+					1. 우리 체크박스, 라디오 등은 label 과 항상 커플링 해줘야한다고 배웠죵 
+					<input type="checkbox" id="chkSmsAgree">
+					<label for="chkSmsAgree">SMS수신</label>
+				-->
+				<input type="checkbox">SMS수신
+			</td>
 		</tr>
 		<tr>
 			<td><span><img src="" alt="쩜"></span>인증번호</td>
-			<td><input type="text"></td>
+			<td>
+				<!-- input 에 미리 보여주는 예시 문구 (문자로 발송된 인증번호 입력) 이 있는데 어떻게 표현하게?
+					js로 value 를 넣었다 빼주는 처리도 가능하지만,
+					input에는 placeholder 라는 속성이 있어서
+
+					아래처럼 표현하면 알아서 예시문구 처리가 됨. 물론 CSS로 placeholder 컬러도 변경 가능함 
+					<input type="text" placeholder="문자로 발송된 인증번호 입력">
+				-->	
+				<input type="text">
+			</td>
 			<td><button></button></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td></td>
+			<!-- [COMMENT] 
+				매주 추천번호 2개 조합이 ~~ <- p로 감싸는게 좋아.
+
+			-->
 			<td>매주 추천번호 2개 조합이 무료로 <span class="text_red">발송</span>됩니다.현재 사용중이신 번호로 정확하게 기재 바랍니다.</td>
 			<td></td>
 			<td></td>
@@ -68,6 +127,21 @@ span안에img를넣어야하나?걍img만써도되는가?
 </table>
 
 col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
+<!-- [COMMENT] 
+	모양대로 보고 COL이라는 인지하는 자체를 완전 버려야 함..
+	지금 저 Select 하나를 다 col 로 판단하고 COL을 다쪼개놓은거 같아,
+	하지만 단순히 td 안에 생년월일 입력 인풋, 셀렉트박스 4개 가 있을 뿐이야. 
+	콜은 th와 td 두개면 충분합니다. 
+
+	의미상으로 파악해야해,
+	col을 쪼갠다는 의미는 CELL을 쪼갠다는거고, CELL이 분리된다는건 각각의 Cell이 하나의 컨텐츠 덩어리로
+	분리된다는 뜻인데, 지금 저 셀렉트 다발과 인풋은 다 같은 동류의 컨텐츠잖아'ㅁ'?....
+	그래서 td는 하나면 됩니다.!
+
+	너비는 CSS로 :) 조절하면대 
+
+	다고쳐주세요 'ㅅ';
+-->
 <table class="signup3">
 	<caption>선택사항입력</caption>
 	<colgroup>
@@ -104,6 +178,8 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 				</select>
 			</td>
 			<td>
+				<!-- [COMMENT] select의 name 속성은, title 같은 개념이 아니고 form 전송할때 DB로 넘어가는..?
+					 ID같은거라 한글쓰면 안대 ㅇㅁ ㅇ 띠용 -->
 				<select name="평달/윤달" id="">
 					<option value="">평달</option>
 					<option value="">윤달</option>
@@ -121,6 +197,7 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	</colgroup>
 	<tbody>
 		<tr>
+			<!-- [COMMENT] 마찬가지로 label 커플링처리 해주세용 -->
 			<td><input type="checkbox">이용약관에 동의합니다 	<a href="">자세히보기</a></td>
 			<td><input type="checkbox">개인정보 취급방침에 동의합니다.</td>
 		</tr>
@@ -131,6 +208,34 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 
 
 <!-- 구매하기 -->
+<!-- [COMMENT] 오잉...... table...? ......... 
+	이게 왜 테이블이지 ? @ㅅ@ 약간 세로로 Column- 화 되어있는 것들은 다 Table 로 보여용?ㅠㅠ
+	마크업도 복잡해지고, 운용도 어렵고 'ㅁ'
+	정말 도식화테이블이 아닌 이상은 나는 Table 태그는 잘 안써!
+
+	나라면..
+
+	<ol class="list_benefit">
+		<li class="benefit1">
+			<strong>혜택1</strong>
+			<p>매주 10개씩 대세추천번호 무료!</p>
+		</li>
+		<li class="benefit2">
+			<strong>혜택2</strong>
+			<p>1등 싹슬이 비법!</p>
+		</li>
+		<li class="benefit3">
+			<strong>혜택3</strong>
+			<p>예상번호 뽑을 때 꼭 필요한 비법자료</p>
+		</li>
+		<li class="benefit4">
+			<strong>혜택4</strong>
+			<p>로또팡내 모든 서비스 무제한 이용</p>
+		</li>
+	</ol>
+	
+	끝!
+-->
 <table class="buy">
 	<caption>구매하기 상위 테이블</caption>
 	<colgroup>
@@ -165,6 +270,12 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	</thead>
 	<tbody>
 		<tr>
+			<!--
+				[COMMENT] 어....
+				@ㅅ@ 으음 ㅋㅋㅋ 이거 Col 다 쪼갠거 하나로 가고,
+				CSS로 display table 처리만 하면 돼.
+				이건 컨닝이 필요할듯, 로또팡 예제코드 보면서 고쳐보아요-
+			 -->
 			<td class="text_big">3개월</td>
 			<td>자유이용권 29,700원<span><img src="" alt="->"></span><span class="text_accent">13,200</span>원</td>
 			<td>56%할인!</td>
@@ -186,6 +297,26 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 </table>
 
 비슷한넓이의 테이블들은 클래스명에 동일한 네임을줘서 넓이를 지정해주나?
+<!-- [COMMENT] 으악! 테이블의 너비 (각 Col의 너비)는 모두 col의 style="width:n%, or npx" 
+	로 지정해주는거지 별도로 CSS에서 클래스 네이밍을 주고 th width:100px 이렇게 주지 않아요-
+
+	지금 밑에 자유이용권 선택, 보장서비스 선택(옵션), 최종 결제금액 등등 
+	테이블의 th 너비, th하나 td 하나라는 점이 동일하잖아?
+
+	그럼 
+	<colgroup>
+		<col style="width:20%">
+		<col>
+	</colgroup>
+	이렇게 첫번째 col의 너비를 다 동일하게 주면 되는고야'ㅁ'
+
+	그리고 지금 '디자인' 이 다 동일하므로,
+	freepass_choice,service_choice 이렇게 줘버리면 CSS처리가.. 굉장히 복잡해겠지?
+
+	table_forms 
+	같이 하나로 통일해서 줘야해.
+	별도의 class로 다 분리할 이유가 단 하나도 없어용.
+-->
 <table class="freepass_choice">
 	<caption>자유이용권 선택</caption>
 	<colgroup>
@@ -239,6 +370,16 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	<tbody>
 		<tr>
 			<td><span><img src="" alt="쩜"></span>코인<span class="text_red">할인</span></td>
+			<!-- [COMMENT] 저 물음표는 클릭하면 코인할인에 대한 Description이 쪼꼬만 레이어로 열리는 구조야.
+				그래서 img가 아니라 특정 액션기능이 포함되므로 button 이 맞아요 :)
+				
+				img 가 쓰였다고 해서 img 태그를 쓸 필요는 없엉 'ㅁ'
+				CSS bg로 처리를 하면되고 굳이 마크업에 img 태그가 쓰일 필요는 없는 경우가 대부분이에용.
+				
+				나라면..
+				<button type="button" class="tip_layer">코인 할인 설명보기</button>
+				이렇게 처리하고, CSS에서 font-size :0을 줄거같아. 
+			-->
 			<td><img src="" alt=""></td>
 			<td><input type="text">원</td>
 			<td><input type="checkbox">사용</td>
@@ -256,7 +397,7 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 <!-- 역대그룹핑 결과 -->
 <p>서비스에 대한 설명이 부족합니다.</p>
 <table class="grouping_result">
-	<caption>역대 그루핑 결과</caption>
+	<caption>역대 그룹핑 결과</caption>
 	<colgroup>
 		<col>
 		<col>
@@ -266,6 +407,7 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	</colgroup>
 	<thead>
 		<tr>
+			<!-- [COMMENT] 다 TH 임. scope="col" -->
 			<td>회차</td>
 			<td>총생성그룹수</td>
 			<td>단수그룹수</td>
@@ -359,6 +501,8 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 <p>서비스에대한설명이부족합니다.</p>
 <table class="cycle_analysis">
 	<caption>당첨번호 재출현 주기 분석</caption>
+	<!-- [COMMENT] 저 로또볼은 하나의 TD가 맞음. (각각의 분리된 Cell 컨텐츠가 아님 ㅠㅠ)
+		그래서 Col은 3개면 됩니다. -->
 	<colgroup>
 		<col>
 		<col>
