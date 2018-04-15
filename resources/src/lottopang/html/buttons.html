@@ -1,0 +1,49 @@
+<!-- sns_login -->
+<ul class="sns_login">
+	<li>
+		<!-- 
+			[COMMENT]
+			N, g+, f, kakao 등은  
+			'텍스트'가 들어있어서 icon 으로 뺀것같고, 텍스트기 때문에 P 태그를 쓴것같은데,
+			아래와 같은 이유로 적절하지 않음.
+
+			1. '네이버','Google'등의 정보가 이미 button_text 안에 들어있어서, 단순 로고를 표현하기위한 이미지는 컨텐츠 정보라고 보기 어려워보임. 표현되어야 하는 컨텐츠는 
+			네이버로그인, 구글로그인 등으로 끝남. 해서 로고이미지는 그냥 bg처리해도 됨.
+
+			2. 만약 본인의 판단으로 이건 컨텐츠가 맞아!! 라면 
+			p 는 적절하지 않아요. 왜냐면 paragraph 잖아? 저 하나의 단어? 가 문장이 될수있옹?
+			태그를 span 으로 바꾸는게 더 적절해보입니다.
+
+			3. 그리고 이건 다 '버튼' 이잖아? 누르면 로그인창이 뜨는 특정 액션이 있는 기능 버튼이기 때문에, buttno 태그나, a 태그를 써야해요.
+		-->
+		<p class="icon">N</p>
+		<p class="button_text">네이버로그인</p>
+	</li>
+	<li>
+		<p class="icon">g+</p>
+		<p class="button_text">Google로그인</p>
+	</li>
+	<li>
+		<p class="icon">f</p>
+		<p class="button_text">facebook로그인</p>
+	</li>
+	<li>
+		<p class="icon">kakao</p>
+		<p class="button_text">kakao로그인</p>
+	</li>
+</ul>
+
+
+
+<!-- 가비니의 나라면 (S) -->
+<ul class="sns_login">
+	<!-- 로그인 버튼을 누를 경우 별도의 로그인 팝업을 띄워주는 기획임. 해서 기능 버튼 보다는 A 태그가 적절해보여서 a태그로 마크업 함. -->
+	<li><a href="#" class="naver">네이버 로그인</a></li>
+	<li><a href="#" class="google">Google 로그인</a></li>
+	<li><a href="#" class="facebook">Facebook 로그인</a></li>
+	<li><a href="#" class="kakao">kakao 로그인</a></li>
+</ul>
+<!-- 가비니의 나라면 (E) -->
+
+
+<!-- //sns_login -->

@@ -1,0 +1,492 @@
+<!-- 회원가입 및 계정찾기 -->
+span안에img를넣어야하나?걍img만써도되는가?
+
+<table class="signup1">
+	<caption>필수사항입력1</caption>
+	<colgroup>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>계정ID / 이메일</td>
+			<td><strong>N60221122</strong>님<span class="text_blue">melissah@naver.com</span></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>닉네임<span class="text_red">(필수)</span></td>
+			<td><input type="text"></td>
+			<td><button></button></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><span class="text_red">이미 사용중입니다. 다른 닉네임을 입력해주세요.</span></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="signup2">
+	<caption>필수사항입력2</caption>
+	<colgroup>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<td><span class="text_red">전화번호를 다시 확인해 주세요</span></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>본인명의 휴대전화<span class="text_red">(필수)</span></td>
+			<td><input type="text"></td>
+			<td><button></button></td>
+			<td><input type="checkbox">SMS수신</td>
+		</tr>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>인증번호</td>
+			<td><input type="text"></td>
+			<td><button></button></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>매주 추천번호 2개 조합이 무료로 <span class="text_red">발송</span>됩니다.현재 사용중이신 번호로 정확하게 기재 바랍니다.</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
+<table class="signup3">
+	<caption>선택사항입력</caption>
+	<colgroup>
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>생년월일시</td>
+			<td><input type="text"></td>
+			<td colspan="2">
+				<select name="양력/음력" id="">
+					<option value="">양력</option>
+					<option value="">음력</option>
+				</select>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2">
+				<select name="양력/음력" id="">
+					<option value="">양력</option>
+					<option value="">음력</option>
+				</select></td>
+			<td colspan="2">
+				<select name="시간" id="">
+					<option value="">子(자)23:30 ~ 01:29</option>
+				</select>
+			</td>
+			<td>
+				<select name="평달/윤달" id="">
+					<option value="">평달</option>
+					<option value="">윤달</option>
+				</select>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="signup4">
+	<caption>약관동의</caption>
+	<colgroup>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<td><input type="checkbox">이용약관에 동의합니다 	<a href="">자세히보기</a></td>
+			<td><input type="checkbox">개인정보 취급방침에 동의합니다.</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- //회원가입 및 계정찾기 -->
+
+
+<!-- 구매하기 -->
+<table class="buy">
+	<caption>구매하기 상위 테이블</caption>
+	<colgroup>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<td><span class="text_blue">혜택1</span><span><img src="" alt="혜택1"></span>매주 10개씩 대세추천번호 무료!</td>
+			<td><span class="text_blue">혜택2</span><span><img src="" alt="혜택2"></span>1등 싹슬이비법!</td>
+			<td><span class="text_blue">혜택3</span><span><img src="" alt="혜택3"></span>예상번호 뽑을때 꼭 필요한 비법자료</td>
+			<td><span class="text_blue">혜택4</span><span><img src="" alt="혜택4"></span>로또팡내 모든 서비스 무제한 이용</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="service_guide">
+	<caption>상품서비스안내</caption>
+	<colgruop>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgruop>
+	<thead>
+		<tr>
+			<td colspan="3">상품 안내</td>
+			<td>서비스 안내</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="text_big">3개월</td>
+			<td>자유이용권 29,700원<span><img src="" alt="->"></span><span class="text_accent">13,200</span>원</td>
+			<td>56%할인!</td>
+			<td><strong>90일동안</strong>모든 자료 무제한 이동 (로또 조합기 포함!)</td>
+		</tr>
+		<tr>
+			<td class="text_big">6개월</td>
+			<td>자유이용권 원<span><img src="" alt="->"></span><span class="text_accent">22,400</span>원</td>
+			<td>62%할인!</td>
+			<td><strong>180일 동안</strong>모든 자료 무제한 이동 (로또 조합기 포함!)*재구매율이 40%에 육박하는 인기 상품입니다.</td>
+		</tr>
+		<tr>
+			<td class="text_big">VIP</td>
+			<td>평생회원 자유이용권<span class="text_accent">97,000</span>원</td>
+			<td></td>
+			<td><strong>평생 동안</strong>모든 자료 무제한 이용 (로또 조합기 포함!)</td>
+		</tr>
+	</tbody>
+</table>
+
+비슷한넓이의 테이블들은 클래스명에 동일한 네임을줘서 넓이를 지정해주나?
+<table class="freepass_choice">
+	<caption>자유이용권 선택</caption>
+	<colgroup>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>기간선택</td>
+			<td>
+				<select name="기간선택" id="">
+					<option value="">3개월</option>
+					<option value="">6개월</option>
+					<option value="">VIP평생회원</option>
+				</select>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="service_choice">
+	<caption>보장 서비스 선택</caption>
+	<colgroup>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>보장없음</td>
+			<td><input type="radio">선택 안 함</td>
+		</tr>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>3등 보장 서비스</td>
+			<td><input type="radio">23,200원추가</td>
+		</tr>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>4등 보장 서비스</td>
+			<td><input type="radio">8,800원추가</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="payment">
+	<caption>최종결제금액</caption>
+	<colgroup>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>코인<span class="text_red">할인</span></td>
+			<td><img src="" alt=""></td>
+			<td><input type="text">원</td>
+			<td><input type="checkbox">사용</td>
+		</tr>
+		<tr>
+			<td><span><img src="" alt="쩜"></span>실 결제금액</td>
+			<td></td>
+			<td><span class="text_accent">12,400</span>원</td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+<!-- //구매하기 -->
+
+<!-- 역대그룹핑 결과 -->
+<p>서비스에 대한 설명이 부족합니다.</p>
+<table class="grouping_result">
+	<caption>역대 그루핑 결과</caption>
+	<colgroup>
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
+	<thead>
+		<tr>
+			<td>회차</td>
+			<td>총생성그룹수</td>
+			<td>단수그룹수</td>
+			<td>그룹핑성공여부</td>
+			<td>그룹핑보기</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>-</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>성공</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>-</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>성공</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>성공</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>성공</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>성공</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>-</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>성공</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>성공</td>
+			<td><a href="">보기</a></td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>00개그룹</td>
+			<td>00개</td>
+			<td>성공</td>
+			<td><a href="">보기</a></td>
+		</tr>
+	</tbody>
+</table>
+<!-- //역대그룹핑 결과 -->
+
+<!-- 주기분석 -->
+<p>서비스에대한설명이부족합니다.</p>
+<table class="cycle_analysis">
+	<caption>당첨번호 재출현 주기 분석</caption>
+	<colgroup>
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
+	<thead>
+		<tr>
+			<td>회차</td>
+			<td colspan="6">당첨번호/출현팀</td>
+			<td>출현기간총합</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>			
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>			
+			<td>00</td>
+		</tr>
+				<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>			
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>			
+			<td>00</td>
+		</tr>
+				<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>			
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>			
+			<td>00</td>
+		</tr>
+				<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>			
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
+			<td><span class="ball_n10th">19</span>6</td>
+			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
+			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
+			<td><span class="ball_n40th">41</span>14</td>			
+			<td>00</td>
+		</tr>
+	</tbody>
+</table>
+<!-- //주기분석 -->
