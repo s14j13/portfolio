@@ -1,0 +1,63 @@
+//all elements
+
+//font-family - 기본 나눔고딕,굴림
+$base-font : "Nanum Gothic", sans-serif;
+$util-font : "Gulim", "굴림", sans-serif;
+
+//font-size - 기본 14px, 타이틀 관련 사이즈,
+$base-size : 14px;
+
+//color - 기본 #000 , 서브컬러 #555, 연한놈 #72767e 강조 #528dff 공지성강조 #ea614e 폼디스에이블 #999
+$base-color : #000;
+$sub-color : #555;
+$disabled-color : #999;
+$light-color : #7b8caf;
+$strong-color : #528dff;
+$notice-color : #ea614e;
+$etc-color :#20b820;
+
+//font-weight
+// 나눔 normal :400, bold : 700, extra-bold : 800 (3가지)
+// noto-sans thin :100, light : 300, normal : 400, medium : 500, bold : 700, extra-bold :800 (6가지)
+
+$thin : 100;
+$light : 300;
+$normal : 400;
+$medium : 500;
+$bold : 700;
+$extra-bold : 800;
+
+//bg-color 추가
+$bg-base : #fafafa;
+$bg-section : #e7e8ec;
+$bg-default : #fff;
+$bg-light : #f3f4f8;
+
+//border-color - 기본 #d6d6d6, 강조 #85abf7
+$border-base : #d6d6d6;
+$border-strong : #85abf7;
+$border-darken : #555;
+$thead-th-color : #f3f4f8;
+$tbody-th-color : #fbfbfb;
+
+//btn-color  - 회색 #72767e, 강조 #528dff
+$btn-primary : #72767e;
+$btn-strong : #528dff;
+$btn-table : #fff;
+$btn-disabled : #b8b8b8;
+
+//input-color -b, border / g, background
+$input-b-primary : #ccc;
+$input-g-primary : #fff;
+$input-b-strong : #528dff;
+$input-g-strong : #e8f0f9;
+$input-b-disabled : #cfcfcf;
+$input-g-disabled : #f4f4f4;
+
+//resource 경로
+$common-img : "../img/common/";
+$content-img : "../img/content/";
+$temp-img : "../img/temp/";
+
+//container size - 기본 1190px
+$container-size : 1190px;
