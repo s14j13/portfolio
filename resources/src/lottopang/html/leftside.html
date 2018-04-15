@@ -1,0 +1,61 @@
+<!-- lnb (자바스크립트로 db에서불러올예정) -->
+
+<!-- [COMMENT] 
+	DB에있는 데이터를 클라이언트에서 json 데이터 형태로 받은 뒤 ,
+	(받아낸 json 데이터객체는 window 에서 전역으로 들고 있게 됨.)
+	자바스크립트로 HTML 구조를 만들어 내게 됨.
+	
+-->
+
+<div class="lnb">
+	<p class="lnb_desc"><!-- [COMMENT] lnb_desc..? 디스크립션이 아니고 타이틀이니까, lnb_title 혹은 lnb_heading 등이 더 적절해 보여요 -->
+		<span>로또팡만의 비법!</span>
+		<strong>로또 통계 비법자료</strong>
+	</p>
+	<div class="lnb_menu">
+		<ul class="menu_1st">
+			<li><a href=""></a>
+				<button>
+					<!-- [COMMENT] 이거 무슨 버튼이야? 설마 마이너스 플러스? 토글버튼?
+						만약 맞다면, 버튼에 주는게 아니라 윗줄에 있는 앵커 - 태그로
+						이벤트 처리 및 마크업이 끝나야 함. 
+						불필요한 중복태그인데다가
+						사용자의 클릭영역이 아주 아주 작아짐
+				 --></button>
+				<ul class="menu_2nd">
+					<li><a href=""></a></li>
+				</ul>
+			</li>
+		</ul>
+		<!-- [COMMENT] js로 구조를 나중에 그려내더라도,
+		맨 처음 CSS/HTML 구조가 완성된 구조는 있어야해'ㅁ'
+		구조 만들어서 넣으세요 (하드코딩으로 메뉴 그리란 말임) -->
+	</div>
+</div>
+<!-- //lnb -->
+
+<!-- etc_info -->
+<div class="etc_info">
+	<div class="ad">
+		<a href=""></a>
+	</div>
+	<dl>
+		<dt>고객센터</dt>
+		<dd class="customcenter_num">070-8221-5031</dd>
+		<dd>운영시간 : 월 ~ 금 09:00~ 18:00</dd>
+	</dl>
+	<dl>
+		<dt>무통장 입금 계좌 번호</dt>
+		<!-- [COMMENT] 국민,우리,신한 등의 은행명이 이 페이지에서 strong 태그로 감쌀만큼의 강조형 컨텐츠는 아니지? span 태그로 변경하고 bold 등의 CSS처리를 합시다 -->
+		<dd><strong>국민	</strong>443101-01-118753</dd>
+		<dd><strong>우리</strong>1005-402-148847</dd>
+		<dd><strong>신한</strong>110-214-719112</dd>
+		<dd>(예금주 : 서주형)</dd>
+	</dl>
+	<dl>
+		<dt>유의사항</dt>
+		<dd>-1:1회원 계시판에 입금 확인을 요청.</dd>
+		<dd>-주문자와 입금자 이름이 일치해야 함.</dd>
+	</dl>
+</div>
+<!-- //etc_info -->
