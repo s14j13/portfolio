@@ -118,6 +118,9 @@ CSS만으로 구현 가능함. -->
 			<!-- [COMMENT] 
 				매주 추천번호 2개 조합이 ~~ <- p로 감싸는게 좋아.
 
+				해당 문구는, 디자인상 좌측여백이 더 들어가 있음.
+				클래스 처리 해야 함. table_desc 등으로 클래스 분기하여 P로 감싸줘야 할거같음.
+
 			-->
 			<td>매주 추천번호 2개 조합이 무료로 <span class="text_red">발송</span>됩니다.현재 사용중이신 번호로 정확하게 기재 바랍니다.</td>
 			<td></td>
@@ -197,7 +200,12 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	</colgroup>
 	<tbody>
 		<tr>
-			<!-- [COMMENT] 마찬가지로 label 커플링처리 해주세용 -->
+			<!-- [COMMENT] 마찬가지로 label 커플링처리 해주세용 
+
+				<input type="checkbox" id="chkAgreeTerm">
+				<label for="chkAgreeTerm>이용약관에 동의합니다</label>
+				<a href="">자세히보기</a>
+			-->
 			<td><input type="checkbox">이용약관에 동의합니다 	<a href="">자세히보기</a></td>
 			<td><input type="checkbox">개인정보 취급방침에 동의합니다.</td>
 		</tr>
