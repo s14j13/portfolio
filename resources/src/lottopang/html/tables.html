@@ -1,5 +1,5 @@
-<!-- 회원가입 및 계정찾기 -->
-span안에img를넣어야하나?걍img만써도되는가?
+회원가입 및 계정찾기 -->
+★span안에img를넣어야하나?걍img만써도되는가?
 <!-- [COMMENT] span 도 아니고, img 도 아니에요. 
 저 쩜탱이 따위가 컨텐츠는 아니기때문에, (디자인으로 파악한 마크업 오류임)
 :before 로 bg 처리 할거야. 그리고 둥근 불릿이라고 해서 이미지가 따로 필요하지 않아요.
@@ -15,39 +15,40 @@ CSS만으로 구현 가능함. -->
 	<colgroup>
 		<col>
 		<col>
-		<col>
-		<col>
 	</colgroup>
 	<tbody>
 		<tr>
 			<!-- [COMMENT]  
 				1. 위에서 언급했듯이 쩜 따위는 마크업에 포함되면 안됩니다 (컨텐츠로써의 의미가 없는 단순 디자인bg.)
 				2. 계정ID/이메일, 닉네임(필수) 등은 td가 아니라 th입니다
-				3. <span class="text_blue">melissah@naver.com</span> <-- text_blue/red 가 아니라 
+				3. <span class="text_blue">melissah@naver.com</span> <- text_blue/red 가 아니라 
 				color_noti, color_strong 등으로 해야 나중에 사이트가 전체적으로 강조컬러가 변경되었을때도 문제가 안생기지?
 				이건 한번 언급했던 부분같아 컬러가 블루라고 해서 컬러값 자체를 클래스에 넣지말자는!
 			-->
-			<td><span><img src="" alt="쩜"></span>계정ID / 이메일</td>
-			<td><strong>N60221122</strong>님<span class="text_blue">melissah@naver.com</span></td>
-			<td></td>
-			<td></td>
+			<th>계정ID / 이메일</th>
+			<td><strong>N60221122</strong>님<span class="blue_noti">melissah@naver.com</span></td>
 		</tr>
 		<tr>
 			<!--[COMMENT] <span class="text_red">(필수)</span> <- 필수 라는건 강조아닐까?'ㅁ'... 
 				나라면 strong 으로 감쌌을거 같아용. 그리고 혹시나 필수에 대한 디자인이 달라질 경우를 대비하여
 				text_red 이런 다른데서도 쓰이는 클래스가 아닌, field_mand, field_req 등으로 네이밍 했을거같아 -->
-			<td><span><img src="" alt="쩜"></span>닉네임<span class="text_red">(필수)</span></td>
-			<td><input type="text"></td>
-			<td><button></button></td>
-			<td></td>
+			<th>
+				<label for="nickname">
+					닉네임<strong class="signup_req">(필수)</strong>
+				</label>
+			</th>
+			<td>
+				<input type="text" id="nickname">
+				<button>중복확인</button>
+			</td>
 		</tr>
 		<tr>
 			<td></td>
+			★아무것도없이빈칸인데 th라고해야하는가?
 			<td>
 				<!-- [COMMENT] span 은 문장 보다는 단어나 짧은 절 정도에 적합하고, 이런건 p가 더 맞아용 -->
-				<span class="text_red">이미 사용중입니다. 다른 닉네임을 입력해주세요.</span></td>
-			<td></td>
-			<td></td>
+				<p class="table_desc">이미 사용중입니다. 다른 닉네임을 입력해주세요.</p>
+				★위에줄에 연속으로 쓰는게아니라 이렇게 3번째줄에 따로 만드는게 맞는건가?
 		</tr>
 	</tbody>
 </table>
@@ -57,15 +58,11 @@ CSS만으로 구현 가능함. -->
 	<colgroup>
 		<col>
 		<col>
-		<col>
-		<col>
 	</colgroup>
 	<tbody>
 		<tr>
-			<td><span class="text_red">전화번호를 다시 확인해 주세요</span></td>
 			<td></td>
-			<td></td>
-			<td></td>
+			<td><p class="table_desc">전화번호를 다시 확인해 주세요.</p></td>
 		</tr>
 
 		<!-- [COMMENT] 
@@ -86,50 +83,56 @@ CSS만으로 구현 가능함. -->
 			</td>
 		-->
 		<tr>
-			<td><span><img src="" alt="쩜"></span>본인명의 휴대전화<span class="text_red">(필수)</span></td>
-			<td><input type="text"></td>
-			<td><button></button></td>
+			<th>
+				<label for="phone">
+					본인명의 휴대전화<strong class="signup_req">(필수)</strong>
+				</label>
+			</th>
 			<td>
+				<input type="text" id="phone">
+				<button>인증하기</button>
+				<input type="checkbox" id="sms"><label for="sms">SMS수신</label>
+			</td>
 				<!-- [COMMENT] 
 					1. 우리 체크박스, 라디오 등은 label 과 항상 커플링 해줘야한다고 배웠죵 
 					<input type="checkbox" id="chkSmsAgree">
 					<label for="chkSmsAgree">SMS수신</label>
 				-->
-				<input type="checkbox">SMS수신
-			</td>
 		</tr>
 		<tr>
-			<td><span><img src="" alt="쩜"></span>인증번호</td>
+			<th>
+				<label for="number">
+					인증번호
+				</label>
+			</th>
 			<td>
+				<input type="text" id="number" placeholder="문자로 발송된 인증번호 입력">
+				<button>확인</button>
+			</td>
 				<!-- input 에 미리 보여주는 예시 문구 (문자로 발송된 인증번호 입력) 이 있는데 어떻게 표현하게?
 					js로 value 를 넣었다 빼주는 처리도 가능하지만,
 					input에는 placeholder 라는 속성이 있어서
-
 					아래처럼 표현하면 알아서 예시문구 처리가 됨. 물론 CSS로 placeholder 컬러도 변경 가능함 
 					<input type="text" placeholder="문자로 발송된 인증번호 입력">
 				-->	
-				<input type="text">
-			</td>
-			<td><button></button></td>
-			<td></td>
 		</tr>
 		<tr>
 			<td></td>
-			<!-- [COMMENT] 
-				매주 추천번호 2개 조합이 ~~ <- p로 감싸는게 좋아.
+				<!-- [COMMENT] 
+					매주 추천번호 2개 조합이 ~~ <- p로 감싸는게 좋아.
 
-				해당 문구는, 디자인상 좌측여백이 더 들어가 있음.
-				클래스 처리 해야 함. table_desc 등으로 클래스 분기하여 P로 감싸줘야 할거같음.
-
-			-->
-			<td>매주 추천번호 2개 조합이 무료로 <span class="text_red">발송</span>됩니다.현재 사용중이신 번호로 정확하게 기재 바랍니다.</td>
-			<td></td>
-			<td></td>
+					해당 문구는, 디자인상 좌측여백이 더 들어가 있음.
+					클래스 처리 해야 함. table_desc 등으로 클래스 분기하여 P로 감싸줘야 할거같음.
+				-->
+			<td>
+				<p class="table_desc">매주 추천번호 2개 조합이 무료로 <span class="red_noti">발송</span>됩니다.
+				현재 사용중이신 번호로 정확하게 기재 바랍니다.</p>
+			</td>
 		</tr>
 	</tbody>
 </table>
 
-col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
+★col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 <!-- [COMMENT] 
 	모양대로 보고 COL이라는 인지하는 자체를 완전 버려야 함..
 	지금 저 Select 하나를 다 col 로 판단하고 COL을 다쪼개놓은거 같아,
@@ -150,40 +153,30 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	<colgroup>
 		<col>
 		<col>
-		<col>
-		<col>
-		<col>
-		<col>
 	</colgroup>
 	<tbody>
 		<tr>
-			<td><span><img src="" alt="쩜"></span>생년월일시</td>
-			<td><input type="text"></td>
-			<td colspan="2">
-				<select name="양력/음력" id="">
+			<th><label for="birth">생년월일시</label></th>
+			<td><input type="text" id="birth" placeholder="예:19810101">
+				<select title="solar/lunar" id="">
 					<option value="">양력</option>
 					<option value="">음력</option>
 				</select>
 			</td>
-			<td></td>
-			<td></td>
 		</tr>
 		<tr>
 			<td></td>
-			<td colspan="2">
-				<select name="양력/음력" id="">
-					<option value="">양력</option>
-					<option value="">음력</option>
-				</select></td>
-			<td colspan="2">
-				<select name="시간" id="">
-					<option value="">子(자)23:30 ~ 01:29</option>
-				</select>
-			</td>
 			<td>
 				<!-- [COMMENT] select의 name 속성은, title 같은 개념이 아니고 form 전송할때 DB로 넘어가는..?
 					 ID같은거라 한글쓰면 안대 ㅇㅁ ㅇ 띠용 -->
-				<select name="평달/윤달" id="">
+				<select title="time" id="time">
+					<option value="">子(자)23:30 ~ 01:29</option>
+				</select>
+				<select title="sex" id="sex">
+					<option value="">남자</option>
+					<option value="">여자</option>
+				</select>
+				<select title="leapmonth" id="leapmonth">
 					<option value="">평달</option>
 					<option value="">윤달</option>
 				</select>
@@ -206,8 +199,15 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 				<label for="chkAgreeTerm>이용약관에 동의합니다</label>
 				<a href="">자세히보기</a>
 			-->
-			<td><input type="checkbox">이용약관에 동의합니다 	<a href="">자세히보기</a></td>
-			<td><input type="checkbox">개인정보 취급방침에 동의합니다.</td>
+			<td>
+				<input type="checkbox" id="chkAgreeTerm">
+				<label for="chkAgreeTerm">이용약관에 동의합니다</label>
+				<a href="">자세히보기</a>
+			</td>
+			<td>
+				<input type="checkbox" id="chkAgreePolicy">
+				<label for="chkAgreePolicy">개인정보 취급방침에 동의합니다.</label>
+			</td>
 		</tr>
 	</tbody>
 </table>
@@ -220,10 +220,8 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	이게 왜 테이블이지 ? @ㅅ@ 약간 세로로 Column- 화 되어있는 것들은 다 Table 로 보여용?ㅠㅠ
 	마크업도 복잡해지고, 운용도 어렵고 'ㅁ'
 	정말 도식화테이블이 아닌 이상은 나는 Table 태그는 잘 안써!
-
-	나라면..
-
-	<ol class="list_benefit">
+-->
+<ol class="list_benefit">
 		<li class="benefit1">
 			<strong>혜택1</strong>
 			<p>매주 10개씩 대세추천번호 무료!</p>
@@ -241,39 +239,17 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 			<p>로또팡내 모든 서비스 무제한 이용</p>
 		</li>
 	</ol>
-	
-	끝!
--->
-<table class="buy">
-	<caption>구매하기 상위 테이블</caption>
-	<colgroup>
-		<col>
-		<col>
-		<col>
-		<col>
-	</colgroup>
-	<tbody>
-		<tr>
-			<td><span class="text_blue">혜택1</span><span><img src="" alt="혜택1"></span>매주 10개씩 대세추천번호 무료!</td>
-			<td><span class="text_blue">혜택2</span><span><img src="" alt="혜택2"></span>1등 싹슬이비법!</td>
-			<td><span class="text_blue">혜택3</span><span><img src="" alt="혜택3"></span>예상번호 뽑을때 꼭 필요한 비법자료</td>
-			<td><span class="text_blue">혜택4</span><span><img src="" alt="혜택4"></span>로또팡내 모든 서비스 무제한 이용</td>
-		</tr>
-	</tbody>
-</table>
 
 <table class="service_guide">
 	<caption>상품서비스안내</caption>
 	<colgruop>
 		<col>
 		<col>
-		<col>
-		<col>
 	</colgruop>
 	<thead>
 		<tr>
-			<td colspan="3">상품 안내</td>
-			<td>서비스 안내</td>
+			<th>상품 안내</th>
+			<th>서비스 안내</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -284,27 +260,32 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 				CSS로 display table 처리만 하면 돼.
 				이건 컨닝이 필요할듯, 로또팡 예제코드 보면서 고쳐보아요-
 			 -->
-			<td class="text_big">3개월</td>
-			<td>자유이용권 29,700원<span><img src="" alt="->"></span><span class="text_accent">13,200</span>원</td>
-			<td>56%할인!</td>
+			<td>
+				<span class="text_big">3개월</span>
+				<p>자유이용권 29,700원<span>-></span><span class="text_accent">13,200</span>원</p>
+				<span class="service_guide_sale">56%할인!</span>
+			</td>
 			<td><strong>90일동안</strong>모든 자료 무제한 이동 (로또 조합기 포함!)</td>
 		</tr>
 		<tr>
-			<td class="text_big">6개월</td>
-			<td>자유이용권 원<span><img src="" alt="->"></span><span class="text_accent">22,400</span>원</td>
-			<td>62%할인!</td>
+			<td>
+			<span class="text_big">6개월</span>
+			<p>자유이용권 원<span>-></span><span class="text_accent">22,400</span>원</p>
+			<span class="service_guide_sale">62%할인!</span>
+			</td>
 			<td><strong>180일 동안</strong>모든 자료 무제한 이동 (로또 조합기 포함!)*재구매율이 40%에 육박하는 인기 상품입니다.</td>
 		</tr>
 		<tr>
-			<td class="text_big">VIP</td>
-			<td>평생회원 자유이용권<span class="text_accent">97,000</span>원</td>
-			<td></td>
+			<td>
+			<span class="text_big">VIP</span>
+			<p>평생회원 자유이용권<span class="text_accent">97,000</span>원</p>
+			</td>
 			<td><strong>평생 동안</strong>모든 자료 무제한 이용 (로또 조합기 포함!)</td>
 		</tr>
 	</tbody>
 </table>
 
-비슷한넓이의 테이블들은 클래스명에 동일한 네임을줘서 넓이를 지정해주나?
+★비슷한넓이의 테이블들은 클래스명에 동일한 네임을줘서 넓이를 지정해주나?
 <!-- [COMMENT] 으악! 테이블의 너비 (각 Col의 너비)는 모두 col의 style="width:n%, or npx" 
 	로 지정해주는거지 별도로 CSS에서 클래스 네이밍을 주고 th width:100px 이렇게 주지 않아요-
 
@@ -333,9 +314,9 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	</colgroup>
 	<tbody>
 		<tr>
-			<td><span><img src="" alt="쩜"></span>기간선택</td>
+			<th>기간선택</th>
 			<td>
-				<select name="기간선택" id="">
+				<select title="period" id="period">
 					<option value="">3개월</option>
 					<option value="">6개월</option>
 					<option value="">VIP평생회원</option>
@@ -353,16 +334,16 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	</colgroup>
 	<tbody>
 		<tr>
-			<td><span><img src="" alt="쩜"></span>보장없음</td>
-			<td><input type="radio">선택 안 함</td>
+			<th>보장없음</th>
+			<td><input type="radio" id="noGuarantee"><label for="noGuarantee">선택 안 함</label></td>
 		</tr>
 		<tr>
-			<td><span><img src="" alt="쩜"></span>3등 보장 서비스</td>
-			<td><input type="radio">23,200원추가</td>
+			<th>3등 보장 서비스</th>
+			<td><input type="radio" id="thirdGuarantee"><label for="thirdGuarantee">23,200원추가</label></td>
 		</tr>
 		<tr>
-			<td><span><img src="" alt="쩜"></span>4등 보장 서비스</td>
-			<td><input type="radio">8,800원추가</td>
+			<th>4등 보장 서비스</th>
+			<td><input type="radio" id="fourthGuarantee"><label for="fourthGuarantee">8,800원추가</label></td>
 		</tr>
 	</tbody>
 </table>
@@ -372,12 +353,9 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	<colgroup>
 		<col>
 		<col>
-		<col>
-		<col>
 	</colgroup>
 	<tbody>
 		<tr>
-			<td><span><img src="" alt="쩜"></span>코인<span class="text_red">할인</span></td>
 			<!-- [COMMENT] 저 물음표는 클릭하면 코인할인에 대한 Description이 쪼꼬만 레이어로 열리는 구조야.
 				그래서 img가 아니라 특정 액션기능이 포함되므로 button 이 맞아요 :)
 				
@@ -388,15 +366,19 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 				<button type="button" class="tip_layer">코인 할인 설명보기</button>
 				이렇게 처리하고, CSS에서 font-size :0을 줄거같아. 
 			-->
-			<td><img src="" alt=""></td>
-			<td><input type="text">원</td>
-			<td><input type="checkbox">사용</td>
+			<th>
+				<label for="coinDiscount">코인<span class="red_noti">할인</span></label>
+				<button type="button" class="tip_layer">코인 할인 설명보기</button>
+			</th>
+			<td>
+				<input type="text" id="coinDiscount">원
+				<input type="checkbox" id="coinDiscount_use"><label for="coinDiscount_use">사용</label>
+			</td>
 		</tr>
 		<tr>
-			<td><span><img src="" alt="쩜"></span>실 결제금액</td>
-			<td></td>
+			<th>실 결제금액</th>
 			<td><span class="text_accent">12,400</span>원</td>
-			<td></td>
+			★강조나 색이 같은 폰트들을 css를적용하는데에 필요한이름을지을때, 같은크기 색깔끼리이름을묶어서 아니면 테이블이나 쓰임용도로 나눠서 이름을짓는가?
 		</tr>
 	</tbody>
 </table>
@@ -416,11 +398,11 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 	<thead>
 		<tr>
 			<!-- [COMMENT] 다 TH 임. scope="col" -->
-			<td>회차</td>
-			<td>총생성그룹수</td>
-			<td>단수그룹수</td>
-			<td>그룹핑성공여부</td>
-			<td>그룹핑보기</td>
+			<th>회차</th>
+			<th>총생성그룹수</th>
+			<th>단수그룹수</th>
+			<th>그룹핑성공여부</th>
+			<th>그룹핑보기</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -515,130 +497,147 @@ col을모양대로다쪼개는가? 내맘대로그냥맞추는가?
 		<col>
 		<col>
 		<col>
-		<col>
-		<col>
-		<col>
-		<col>
-		<col>
 	</colgroup>
 	<thead>
 		<tr>
-			<td>회차</td>
-			<td colspan="6">당첨번호/출현팀</td>
-			<td>출현기간총합</td>
+			<th>회차</th>
+			<th>당첨번호/출현팀</th>
+			<th>출현기간총합</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
 			<td>00</td>
 		</tr>
 		<tr>
 			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>			
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
 			<td>00</td>
 		</tr>
 		<tr>
 			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>			
-			<td>00</td>
-		</tr>
-				<tr>
-			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
 			<td>00</td>
 		</tr>
 		<tr>
 			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>			
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
 			<td>00</td>
 		</tr>
 		<tr>
 			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>			
-			<td>00</td>
-		</tr>
-				<tr>
-			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
 			<td>00</td>
 		</tr>
 		<tr>
 			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>			
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
 			<td>00</td>
 		</tr>
 		<tr>
 			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>			
-			<td>00</td>
-		</tr>
-				<tr>
-			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>			
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
 			<td>00</td>
 		</tr>
 		<tr>
 			<td>로또<span class="text_blue">000</span>회</td>
-			<td><span class="ball_n1th">6</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">18</span><span class="text_red">1</span></td>
-			<td><span class="ball_n10th">19</span>6</td>
-			<td><span class="ball_n20th">24</span><span class="text_red">5</span></td>
-			<td><span class="ball_n30th">34</span><span class="text_red">1</span></td>
-			<td><span class="ball_n40th">41</span>14</td>			
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
+			<td>00</td>
+		</tr>
+		<tr>
+			<td>로또<span class="text_blue">000</span>회</td>
+			<td>
+				<span class="ball_n1th">6</span><span class="text_red">1</span>
+				<span class="ball_n10th">18</span><span class="text_red">1</span>
+				<span class="ball_n10th">19</span>6
+				<span class="ball_n20th">24</span><span class="text_red">5</span>
+				<span class="ball_n30th">34</span><span class="text_red">1</span>
+				<span class="ball_n40th">41</span>14
+			</td>
 			<td>00</td>
 		</tr>
 	</tbody>
 </table>
-<!-- //주기분석 -->
+<!-- //주기분석
