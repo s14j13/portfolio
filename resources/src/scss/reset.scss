@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+
+/******************** [ RESET(NOMALIZE) ] ************************/
+html, body {height: 100%;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;}
+h1, h2, h3, h4 {font-weight: normal;font-style: normal;}
+li, select, input, label, button, img {vertical-align: middle;}
+th, em {font-weight: normal;text-decoration: none; }
+input, select, textarea {border-radius: 0;} 
+img, fieldset, iframe {border: 0;}
+table, div {border-collapse: collapse;border-spacing: 0; }
+ul, li, ol {list-style-type: none;}
+button::-moz-focus-inner {border: 0;padding: 0; }
+button {border: 0 none;margin: 0;padding: 0;font-family: inherit;font-size: inherit;background:transparent;cursor:pointer;}
+button[disabled] {cursor: default;}
+textarea {resize: none;}
+div, ul, li, span, input, button, a {box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+a, label {display: inline-block;vertical-align: middle;}
+em {font-style:normal}
+p a {vertical-align:auto}
+a {text-decoration:none;} 
+hr {height:0;width:0;overflow:hidden;margin:0;border:0;text-indent:-9999px;font-size:0;}
+caption {display:none}
+ 
+ 
+ 
+/******************** [ INITIALIZE(PRIMARY DESIGN) ] ************************/
+/* ( BODY ) */
+html,body {height:100%;} 
+html.mainHtml,html.mainHtml body { 
+	min-width:1000px;
+}
+body { 
+	font-family:'Malgun Gothic','맑은 고딕','나눔고딕','NanumGothic','돋움',Dotum,'굴림',Gulim,sans-serif; 
+	font-size:13px; 
+	letter-spacing:-.5px; 
+	color: #222;
+}
+
+
+/* ( FORM ELEMENT ) */
+input[type="text"], input[type="password"], 
+input[type="tel"], input[type="number"],
+input[type="email"], input[type="url"],
+select {
+	font: inherit;
+	-webkit-appearance:none;
+}
