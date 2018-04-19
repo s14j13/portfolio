@@ -4,6 +4,10 @@
 	<span class="title">무료 회원 가입</span>
 </h2>
 ★div안에 p안에 span이런식 h1~6도 div처럼인식?
+<!-- [ANSWER] 질문을 잘 이해못하겠오
+h1~6 도 div 처럼 인식? 이란것은, 블록컨텐츠인거냐- 하고 묻는건가?
+그렇다면 예 입니다. 하지만 스펙에는 담기는 콘텐츠가 inline 이라고 되어있을거야.
+CSS의 BOX-MODEL 은 block 이지만, 내부 담겨지는 컨텐츠는 inline 요소만 가능!  -->
 <!-- //page_title -->
 
 <!-- contant -->
@@ -18,6 +22,32 @@
 <!-- paging -->
 <table class="paging">
 	<tr>
+		<!-- [COMMENT] 
+		1.물론 눈에보이는게 꺽쇠 꺽쇠..'ㅂ' 이긴 하나, '의미'를 전혀 담고있지 못하잖아?
+		2. 각 디자인을 얹을 수 있는 클래스 분기가 전혀 안되어있어 ㅠ.ㅜ
+		
+		3. 테이블태그는 불필요+무의미해. 이게 데이터 표야?@.@
+		   컬럼, 로우 위치 모든 시각적인 제어는 CSS로 하는거야,
+		   계속 컬럼과 로우를 테이블로 보려는 습관을 아주 아주 바닥까지 버려야해.
+		   테이블은, 정말 '표' 에만 쓰도록 합시다 :)
+
+		1,2,3 모두를 해결하는 나라면 마크업. : 
+
+		[첫목록(<<), 이전목록(<), 다음목록(>), 마지막목록(>>)] 이런 의미를 갖고있지? 그리고 링크의 집합- 이기떄문에, 
+		단순히 SPAN 이나 DIV 로 감싸도 상관없어.
+		게다가 현재페이지는 링크로 안감싸도됩니당! (이미 이페이지를 보고있는데 또 이동될 필요 없으니까)
+		
+		<span class="pagination">
+			<a href="" class="navi first">첫목록</a>
+			<a href="" class="navi prev">이전목록</a>
+			<a href="" class="page">1</a>
+			<span class="page now">2</span>
+			<a href="" class="page">3</a>
+			<a href="" class="page">4</a>
+			<a href="" class="navi next">다음목록</a>
+			<a href="" class="navi last">마지막목록</a>
+		</span>
+		-->
 		<td><a href="">&lt;&lt;</a></td>
 		<td><a href="">&lt;</a></td>
 		<td><a href="">1</a></td>
@@ -31,6 +61,7 @@
 <!-- //paging -->
 
 <!-- benefit -->
+<!-- [COMMENT] Paragraph로 하는게 적절합니당. -->
 <div class="benefit"><span class="icon">혜택</span>무통장입금결제시5%추가할인혜택을드립니다!!</div>
 <!-- //benefit -->
 
@@ -44,9 +75,15 @@
 <!-- slogan -->
 <div class="slogan">
 	<span class="logo">로또예상번호는 로또팡</span>
+	<!-- [COMMENT] saleicon : 디자인 잘봐봐 :> 보면, 62만 댑빵큰데 이 마크업으로는 분리해서 디자인 적용이 불가하지 ? ㅠㅠ 그래서 <span class="saleicon"><span class="rate">62</span>%할인</span> 이렇게 할거같음! -->
 	<span class="saleicon">62%할인</span>
+
 	<p class="desc">로또팡의 모든 서비스를 누리고 대세 추천번호도 더 받고 1석 2조의 방법!!!<span>지금, 자유이용권을 구매하면! 대세 추천번호가 따라온다</span></p>
+
+	<!-- [COMMENT] BUTTON 타입 선언 안하면 기본타입 Submit 이라서, 클릭하면 폼전송 기능타면서 IE 하위버전에서는 새로고침 되어버림. button선언할때는 button type="button" 처럼 명확한 타입 선언 꼭 해주세용 -->
 	<button>자유이용권 구입하기</button>
-	<!-- 비슷한 형식일때 없어지는 아이들도 만들어 놓고 display none? -->
+
+	<!-- Q. 비슷한 형식일때 없어지는 아이들도 만들어 놓고 display none? -->
+	<!-- [ANSWER] 만약, Include 로 뺄거라고 해도! Case에 따라 js 로 분기해야하는 추가적인 처리가 필요해. 이건 굳이...? 그냥 케이스별로 페이지 하단마다 그떄그떄 적절하게 내용 다르게 넣으면 될거같아. --> 
 </div>
 <!-- //slogan -->
