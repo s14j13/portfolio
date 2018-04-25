@@ -26,7 +26,7 @@ CSS만으로 구현 가능함. -->
 				이건 한번 언급했던 부분같아 컬러가 블루라고 해서 컬러값 자체를 클래스에 넣지말자는!
 			-->
 			<th>계정ID / 이메일</th>
-			<td><strong>N60221122</strong>님<span class="blue_noti">melissah@naver.com</span></td>
+			<td><strong>N60221122</strong>님<span class="color_noti">melissah@naver.com</span></td>
 		</tr>
 		<tr>
 			<!--[COMMENT] <span class="text_red">(필수)</span> <- 필수 라는건 강조아닐까?'ㅁ'... 
@@ -127,7 +127,7 @@ CSS만으로 구현 가능함. -->
 					클래스 처리 해야 함. table_desc 등으로 클래스 분기하여 P로 감싸줘야 할거같음.
 				-->
 			<td>
-				<p class="table_desc">매주 추천번호 2개 조합이 무료로 <span class="red_noti">발송</span>됩니다.
+				<p class="table_desc">매주 추천번호 2개 조합이 무료로 <span class="color_strong">발송</span>됩니다.
 				현재 사용중이신 번호로 정확하게 기재 바랍니다.</p>
 			</td>
 		</tr>
@@ -254,6 +254,52 @@ CSS만으로 구현 가능함. -->
 			<th>서비스 안내</th>
 		</tr>
 	</thead>
+
+	<tbody>
+                        <tr>
+                            <td data-align="">
+                                <div class="list_free_ticket">
+                                    <div><b data-font="18">3개월</b></div>
+                                    <div>플러스회원권
+                                        <br>29,700원 → <span data-color="red" data-font="18">13,200</span>원
+                                    </div>
+                                    <div>
+                                        <strong class="percent">
+                                            <span data-font="18">56</span>%<br>할인!
+                                        </strong>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-align=""><b>90일 동안</b>모든 자료 무제한 이동 (로또팡 조합기 포함!)</td>
+                        </tr>
+                        <tr>
+                            <td data-align="">
+                                <div class="list_free_ticket">
+                                    <div><b data-font="18">6개월</b></div>
+                                    <div>플러스회원권
+                                        <br>69,400원 → <span data-color="red" data-font="18">22,400</span>원
+                                    </div>
+                                    <div>
+                                        <strong class="percent">
+                                            <span data-font="18">62</span>%<br>할인!
+                                        </strong>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-align=""><b>180일 동안</b>모든 자료 무제한 이동 (로또팡 조합기 포함!)<br>* 재구매율이 40%에 육박하는 인기상품입니다.</td>
+                        </tr>
+                        <tr>
+                            <td data-align="">
+                                <div class="list_free_ticket">
+                                    <div><b data-font="18">VIP</b></div>
+                                    <div>평생회원 플러스회원권
+                                        <span data-color="red" data-font="18">97,000</span>원
+                                    </div><div></div>
+                                </div>
+                            </td>
+                            <td data-align=""><b>평생 동안</b>모든 자료 무제한 이동 (로또팡 조합기 포함!)</td>
+                        </tr>
+                    </tbody>
 	<tbody>
 		<tr>
 			<!--
@@ -263,26 +309,26 @@ CSS만으로 구현 가능함. -->
 				이건 컨닝이 필요할듯, 로또팡 예제코드 보면서 고쳐보아요-
 			 -->
 			<td>
-				<span class="text_big">3개월</span>
-				<p>자유이용권 29,700원<span>-></span><span class="text_accent">13,200</span>원</p>
+				<b data-font="">3개월</b>
+				<p>자유이용권 29,700원 → <span data-color="red" data-font="">13,200</span>원</p>
 				<span class="service_guide_sale">56%할인!</span>
 			</td>
-			<td><strong>90일동안</strong>모든 자료 무제한 이동 (로또 조합기 포함!)</td>
+			<td><b>90일동안</b>모든 자료 무제한 이동 (로또 조합기 포함!)</td>
 		</tr>
 		<tr>
 			<td>
-			<span class="text_big">6개월</span>
-			<p>자유이용권 원<span>-></span><span class="text_accent">22,400</span>원</p>
+			<b data-font="">6개월</b>
+			<p>자유이용권 원 → <span data-color="red" data-font="">22,400</span>원</p>
 			<span class="service_guide_sale">62%할인!</span>
 			</td>
-			<td><strong>180일 동안</strong>모든 자료 무제한 이동 (로또 조합기 포함!)*재구매율이 40%에 육박하는 인기 상품입니다.</td>
+			<td><b>180일 동안</b>모든 자료 무제한 이동 (로또 조합기 포함!)*재구매율이 40%에 육박하는 인기 상품입니다.</td>
 		</tr>
 		<tr>
 			<td>
-			<span class="text_big">VIP</span>
-			<p>평생회원 자유이용권<span class="text_accent">97,000</span>원</p>
+			<b data-font="">VIP</b>
+			<p>평생회원 자유이용권<span data-color="red" data-font="">97,000</span>원</p>
 			</td>
-			<td><strong>평생 동안</strong>모든 자료 무제한 이용 (로또 조합기 포함!)</td>
+			<td><b>평생 동안</b>모든 자료 무제한 이용 (로또 조합기 포함!)</td>
 		</tr>
 	</tbody>
 </table>
@@ -308,7 +354,7 @@ CSS만으로 구현 가능함. -->
 	같이 하나로 통일해서 줘야해.
 	별도의 class로 다 분리할 이유가 단 하나도 없어용.
 -->
-<table class="freepass_choice">
+<table class="table_forms">
 	<caption>자유이용권 선택</caption>
 	<colgroup>
 		<col>
@@ -328,7 +374,7 @@ CSS만으로 구현 가능함. -->
 	</tbody>
 </table>
 
-<table class="service_choice">
+<table class="table_forms">
 	<caption>보장 서비스 선택</caption>
 	<colgroup>
 		<col>
@@ -381,6 +427,8 @@ CSS만으로 구현 가능함. -->
 			<th>실 결제금액</th>
 			<td><span class="text_accent">12,400</span>원</td>
 			★강조나 색이 같은 폰트들을 css를적용하는데에 필요한이름을지을때, 같은크기 색깔끼리이름을묶어서 아니면 테이블이나 쓰임용도로 나눠서 이름을짓는가?
+			직접적인css로크기를주고 색상이나쓰임을클래스로줘서사용합.
+			<!-- <strong data-font="16" class="color_noti">발송</strong>이런식으로 -->
 		</tr>
 	</tbody>
 </table>
