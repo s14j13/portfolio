@@ -14,7 +14,7 @@ var paths = {
   commonjs : src + '/js/*.js',/*
   funcjs : src + '/js/!*.js',*/
   scss : src + '/scss/common-ui.scss',
-  scssAll : src + '/scss/**/*.scss'
+  scssAll : src + '/scss/*.scss'
 };
 
 gulp.task('js_common_concat', function() {
@@ -37,7 +37,7 @@ gulp.task('scss_compile', function() {
     return gulp.src(paths.scss)
       .pipe(sourcemaps.init())
       .pipe(scss(scssOptions).on('error', scss.logError))
-      .pipe(sourcemaps.write('sourcemaps'))
+      .pipe(sourcemaps.write('sourcemaps')) 
       .pipe(gulp.dest(dist + '/css'))
 });
 

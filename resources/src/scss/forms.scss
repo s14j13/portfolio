@@ -1,0 +1,15 @@
+/* 순서 첫번째. 폼요소부터 공통화 함 */
+
+input{
+	//[QUIZ] sass-lang 들어가서, each, for 문으로 아래 text,password,tel,email 반복 선언안해도 되게끔 처리해주세요. (컨닝가능)
+	&[type=text],&[type=password],&[type=tel],&[type=email] {
+		height:44px;line-height:44px;
+		background-color:#e8f0f9;
+		text-indent:18px;
+		color:#528dff;
+
+		&:focus {
+
+		}
+	}
+}
