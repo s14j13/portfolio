@@ -1,66 +1,263 @@
 @charset "UTF-8";
 @CHARSET "UTF-8";
 /******************** [ RESET(NOMALIZE) ] ************************/
-html, body { height: 100%; }
+html, body {
+    height: 100%;
+}
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; }
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
-h1, h2, h3, h4 { font-weight: normal; font-style: normal; }
+h1, h2, h3, h4 {
+    font-weight: normal;
+    font-style: normal;
+}
 
-li, select, input, label, button, img { vertical-align: middle; }
+li, select, input, label, button, img {
+    vertical-align: middle;
+}
 
-th, em { font-weight: normal; text-decoration: none; }
+th, em {
+    font-weight: normal;
+    text-decoration: none;
+}
 
-input, select, textarea { border-radius: 0; }
+input, select, textarea {
+    border-radius: 0;
+}
 
-img, fieldset, iframe { border: 0; }
+img, fieldset, iframe {
+    border: 0;
+}
 
-table, div { border-collapse: collapse; border-spacing: 0; }
+table, div {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
-ul, li, ol { list-style-type: none; }
+table {
+    table-layout: fixed;
+}
 
-button::-moz-focus-inner { border: 0; padding: 0; }
+ul, li, ol {
+    list-style-type: none;
+}
 
-button { border: 0 none; margin: 0; padding: 0; font-family: inherit; font-size: inherit; background: transparent; cursor: pointer; }
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
 
-button[disabled] { cursor: default; }
+button {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent;
+    cursor: pointer;
+}
 
-textarea { resize: none; }
+button[disabled] {
+    cursor: default;
+}
 
-div, ul, li, span, input, button, a { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
+textarea {
+    resize: none;
+}
 
-a, label { display: inline-block; vertical-align: middle; }
+div, ul, li, span, input, button, a {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
 
-em { font-style: normal; }
+a, label {
+    display: inline-block;
+    vertical-align: middle;
+}
 
-p a { vertical-align: auto; }
+em {
+    font-style: normal;
+}
 
-a { text-decoration: none; }
+p a {
+    vertical-align: auto;
+}
 
-hr { height: 0; width: 0; overflow: hidden; margin: 0; border: 0; text-indent: -9999px; font-size: 0; }
+a {
+    text-decoration: none;
+}
 
-/* [COMMENT] caption  1.display: none 처리는, 접근성을 지키지 않아도 되는 프로젝트에서 Reset. 2.font-size:0;line-height:0;text-indent:-9999px; : 접근성프로젝트용 Reset */
-caption { font-size: 0; line-height: 0; text-indent: -9999px; }
+hr {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    margin: 0;
+    border: 0;
+    text-indent: -9999px;
+    font-size: 0;
+}
+
+/* [COMMENT] caption 
+1.display: none 처리는, 접근성을 지키지 않아도 되는 프로젝트에서 Reset.
+2.font-size:0;line-height:0;text-indent:-9999px; : 접근성프로젝트용 Reset
+ */
+caption {
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
 
 /******************** [ INITIALIZE(PRIMARY DESIGN) ] ************************/
 /* ( BODY ) */
 /* [COMMENT] 디자인을 보고, LNB 영역 혹은 Contents 영역이 높이 100% 처리가 될 필요가 있다면, 아래처럼 html,body 
 전체 높이를 100% 로 처리해준다. */
-html, body { height: 100%; }
+html, body {
+    height: 100%;
+}
 
-html.mainHtml, html.mainHtml body { min-width: 1000px; }
+html.mainHtml, html.mainHtml body {
+    min-width: 1000px;
+}
 
 /* ( FONT ) */
-@font-face { font-family: 'nanumR'; /* 폰트명은 내맘대로. */ src: ''; font-weight: 400; }
+@font-face {
+    font-family: 'nanumR';
+    /* 폰트명은 내맘대로. */
+    src: '';
+    font-weight: 400;
+}
 
-body { /* [QUIZ] 디자인 파일을 열어서, 기본폰트로 셋팅하세요. @font-face 를 이용해서, 나눔고딕 레귤러, 볼드, 엑스트라볼드. 3개의 웹폰트를 선언한 후, 아래 font-family 를 지정하시오! */ font-family: 'nanumR','나눔고딕','NanumGothic','Malgun Gothic','맑은 고딕','돋움',Dotum,'굴림',Gulim,sans-serif; font-size: 13px; letter-spacing: -.5px; color: #222; }
+body {
+    /* [QUIZ] 디자인 파일을 열어서, 기본폰트로 셋팅하세요.
+		@font-face 를 이용해서, 나눔고딕 레귤러, 볼드, 엑스트라볼드. 3개의 웹폰트를 선언한 후, 아래 font-family 를 지정하시오!
+	 */
+    font-family: 'nanumR','나눔고딕','NanumGothic','Malgun Gothic','맑은 고딕','돋움',Dotum,'굴림',Gulim,sans-serif;
+    font-size: 13px;
+    letter-spacing: -.5px;
+    color: #222;
+}
 
 /* ( FORM ELEMENT ) */
-input[type="text"], input[type="password"], input[type="tel"], input[type="number"], input[type="email"], input[type="url"], select { font: inherit; /* [COMMENT] 폼 엘리먼트 (input/button/textarea/+pre) 들은 폰트를 자체적으로 재정의 하고있어서, body 에 선언되어있는 font 속성들을 상속받지 않음. 해서, font:inherit; 라고 오버라이딩 해줘야 body 의 폰트관련속성을 상속받게 됨. */ /* [COMMENT] 모바일 전용 속성. 차이는 모바일때 알려줌 */ -webkit-appearance: none; }
+input[type="text"], input[type="password"],
+input[type="tel"], input[type="number"],
+input[type="email"], input[type="url"],
+select {
+    font: inherit;
+    /* [COMMENT] 폼 엘리먼트 (input/button/textarea/+pre) 들은 폰트를 자체적으로 재정의 하고있어서, body 에 선언되어있는 font 속성들을
+	   상속받지 않음. 해서, font:inherit; 라고 오버라이딩 해줘야 body 의 폰트관련속성을 상속받게 됨. */
+    /* [COMMENT] 모바일 전용 속성. 차이는 모바일때 알려줌 */
+    -webkit-appearance: none;
+}
 
 /* 순서 첫번째. 폼요소부터 공통화 함 */
-input[type=text], input[type=password], input[type=tel], input[type=email] { height: 44px; line-height: 44px; background-color: #e8f0f9; text-indent: 18px; color: #528dff; }
+input[type='text'] {
+    height: 44px;
+    line-height: 44px;
+    font-weight: 700;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e8f0f9;
+    background-color: #e8f0f9;
+    text-indent: 18px;
+    color: #528dff;
+}
+
+input[type='text']:focus {
+    border-color: #528dff;
+    background-color: #fff;
+}
+
+input[type='password'] {
+    height: 44px;
+    line-height: 44px;
+    font-weight: 700;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e8f0f9;
+    background-color: #e8f0f9;
+    text-indent: 18px;
+    color: #528dff;
+}
+
+input[type='password']:focus {
+    border-color: #528dff;
+    background-color: #fff;
+}
+
+input[type='tel'] {
+    height: 44px;
+    line-height: 44px;
+    font-weight: 700;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e8f0f9;
+    background-color: #e8f0f9;
+    text-indent: 18px;
+    color: #528dff;
+}
+
+input[type='tel']:focus {
+    border-color: #528dff;
+    background-color: #fff;
+}
+
+input[type='email'] {
+    height: 44px;
+    line-height: 44px;
+    font-weight: 700;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e8f0f9;
+    background-color: #e8f0f9;
+    text-indent: 18px;
+    color: #528dff;
+}
+
+input[type='email']:focus {
+    border-color: #528dff;
+    background-color: #fff;
+}
 
 /* @charset "UTF-8"; 이 선언되어야 하지만, SCSS 를 사용해서 자동으로 Merge 해주기 때문에 생략할것임. */
+.table_forms {
+    width: 100%;
+    border-top: 1px solid #505050;
+    /* [COMMENT] 중요!!!!!!!!!! */
+}
+
+.table_forms th {
+    padding-right: 40px;
+    padding-left: 60px;
+    vertical-align: top;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.table_forms th:before {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    margin-right: 6px;
+    background-color: #8a9fc7;
+    border-radius: 50px;
+    vertical-align: top;
+}
+
+.table_forms th, .table_forms td {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.table_forms tr:first-child th, .table_forms tr:first-child td {
+    padding-top: 25px;
+}
 
 /*# sourceMappingURL=sourcemaps/common-ui.css.map */

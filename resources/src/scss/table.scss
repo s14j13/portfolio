@@ -1,7 +1,46 @@
 /* @charset "UTF-8"; 이 선언되어야 하지만, SCSS 를 사용해서 자동으로 Merge 해주기 때문에 생략할것임. */
 
 .table_forms {
+	width:100%;
+	border-top:1px solid #505050;
 
+	
+	
+	th {
+		padding:{
+			right:40px;
+			left:60px;
+		}	
+		vertical-align:top;
+		text-align:left;
+		white-space:nowrap;
+
+		&:before{
+			display:inline-block;
+			position:relative;top:5px;
+			content:"";
+			width:5px;height:5px;
+			margin-right:6px; 
+			background-color:#8a9fc7;
+			border-radius:50px;
+			vertical-align:top;
+		}
+
+	}
+	/* [COMMENT] 중요!!!!!!!!!! */
+	th , & td {
+		padding:{
+			top:14px;
+			bottom:14px;
+		}
+		
+	}
+	
+	tr:first-child{
+		th, & td {
+			padding-top:25px;
+		}
+	}
 }
 
 
