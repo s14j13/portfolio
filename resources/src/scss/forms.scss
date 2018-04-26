@@ -13,3 +13,9 @@ input{
 		}
 	}
 }
+
+$inputDataType: text, password, tel, email;
+
+@each $value in $inputDataType{
+	&[type='#{$value}']
+}
