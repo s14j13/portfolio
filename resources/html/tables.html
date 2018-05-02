@@ -6,23 +6,22 @@
 	<title>로또팡 실습</title>
 </head>
 
-<!-- [Q]회원가입 및 계정찾기 
-★span안에img를넣어야하나?걍img만써도되는가? -->
-
-<!-- [ANSWER] span 도 아니고, img 도 아니에요. 
+회원가입 및 계정찾기 --> 
+★span안에img를넣어야하나?걍img만써도되는가?
+<!-- [COMMENT] span 도 아니고, img 도 아니에요. 
 저 쩜탱이 따위가 컨텐츠는 아니기때문에, (디자인으로 파악한 마크업 오류임)
 :before 로 bg 처리 할거야. 그리고 둥근 불릿이라고 해서 이미지가 따로 필요하지 않아요.
 
 IE8에서 border-radius 를 지원하지 않지만,
 IE9부터는 지원하기 떄문에 border-raidus:50px;background-color:gray; width:npx;height:npx;
 하면 저 둥근 불릿이 만들어지는데,
-IE8에서는 각진 네모로 나올뿐이라 이건 IE8에서의 완벽한 구현은 포기하고
+IE8에서는 각진 네모로 나올뿐이라 이건 IE8에서의 완벽한 구현은 포기하고 
 CSS만으로 구현 가능함. -->
 
-<table class="table_forms">
+<table class="signup1">
 	<caption>필수사항입력1</caption>
 	<colgroup>
-		<col style="width:25%">
+		<col>
 		<col>
 	</colgroup>
 	<tbody>
@@ -48,25 +47,26 @@ CSS만으로 구현 가능함. -->
 			</th>
 			<td>
 				<input type="text" id="nickname">
-				<button type="button">중복확인</button>
-
-
-				<!--[Q]★아무것도없이빈칸인데 th라고해야하는가? -->
-				<!-- [ANSWER] 눈에 보이는 Col이 나뉘어져 있다고 해서 여러개의 컬럼으로 나누지 않았던 것 처럼,
+				<button class="btn_primary">중복확인</button>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			★아무것도없이빈칸인데 th라고해야하는가?
+			<!-- [ANSWER] 눈에 보이는 Col이 나뉘어져 있다고 해서 여러개의 컬럼으로 나누지 않았던 것 처럼,
 			              같은 이유로 같은 항목이라면 하나의 TD로 묶어주어야 합니다 'ㅅ'.. TD 안에 desc paragraph 넣어주세용 -->
-
+			<td>
 				<!-- [COMMENT] span 은 문장 보다는 단어나 짧은 절 정도에 적합하고, 이런건 p가 더 맞아용 -->
 				<p class="table_desc">이미 사용중입니다. 다른 닉네임을 입력해주세요.</p>
-				<!-- [Q] ★위에줄에 연속으로 쓰는게아니라 이렇게 3번째줄에 따로 만드는게 맞는건가? -->
-			</td>
+				★위에줄에 연속으로 쓰는게아니라 이렇게 3번째줄에 따로 만드는게 맞는건가?
 		</tr>
 	</tbody>
 </table>
 
-<table class="table_forms">
+<table class="signup2">
 	<caption>필수사항입력2</caption>
 	<colgroup>
-		<col style="width:25%">
+		<col>
 		<col>
 	</colgroup>
 	<tbody>
@@ -100,7 +100,7 @@ CSS만으로 구현 가능함. -->
 			</th>
 			<td>
 				<input type="text" id="phone">
-				<button>인증하기</button>
+				<button class="btn_strong">인증하기</button>
 				<input type="checkbox" id="sms"><label for="sms">SMS수신</label>
 			</td>
 				<!-- [COMMENT] 
@@ -117,7 +117,7 @@ CSS만으로 구현 가능함. -->
 			</th>
 			<td>
 				<input type="text" id="number" placeholder="문자로 발송된 인증번호 입력">
-				<button>확인</button>
+				<button class="btn_primary">확인</button>
 			</td>
 				<!-- input 에 미리 보여주는 예시 문구 (문자로 발송된 인증번호 입력) 이 있는데 어떻게 표현하게?
 					js로 value 를 넣었다 빼주는 처리도 가능하지만,
@@ -158,10 +158,10 @@ CSS만으로 구현 가능함. -->
 
 	다고쳐주세요 'ㅅ';
 -->
-<table class="table_forms">
+<table class="signup3">
 	<caption>선택사항입력</caption>
 	<colgroup>
-		<col style="width:25%">
+		<col>
 		<col>
 	</colgroup>
 	<tbody>
@@ -195,10 +195,10 @@ CSS만으로 구현 가능함. -->
 	</tbody>
 </table>
 
-<table class="table_forms">
+<table class="signup4">
 	<caption>약관동의</caption>
 	<colgroup>
-		<col style="width:25%">
+		<col>
 		<col>
 	</colgroup>
 	<tbody>
@@ -404,7 +404,7 @@ CSS만으로 구현 가능함. -->
 	</tbody>
 </table>
 
-<table class="table_forms">
+<table class="payment">
 	<caption>최종결제금액</caption>
 	<colgroup>
 		<col>
@@ -444,7 +444,7 @@ CSS만으로 구현 가능함. -->
 
 <!-- 역대그룹핑 결과 -->
 <p>서비스에 대한 설명이 부족합니다.</p>
-<table class="table_data">
+<table class="grouping_result">
 	<caption>역대 그룹핑 결과</caption>
 	<colgroup>
 		<col>
@@ -547,7 +547,7 @@ CSS만으로 구현 가능함. -->
 
 <!-- 주기분석 -->
 <p>서비스에대한설명이부족합니다.</p>
-<table class="table_data">
+<table class="cycle_analysis">
 	<caption>당첨번호 재출현 주기 분석</caption>
 	<!-- [COMMENT] 저 로또볼은 하나의 TD가 맞음. (각각의 분리된 Cell 컨텐츠가 아님 ㅠㅠ)
 		그래서 Col은 3개면 됩니다. -->
